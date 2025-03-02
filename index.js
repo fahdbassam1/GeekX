@@ -48,6 +48,52 @@ window.onscroll = function () {
         scrollTopBtn.style.display = "none";
     }
 };
+// script.js
+
+// تفعيل الوضع الليلي
+document.querySelector("#night-mode").addEventListener("click", function() {
+    document.body.classList.toggle("night-mode");
+});
+
+// مثال على إضافة مقالات عبر JavaScript
+const articles = [
+    {
+        title: "مقدمة في البرمجة",
+        content: "هنا يمكنك كتابة محتوى المقال."
+    },
+    {
+        title: "كيفية تعلم Python",
+        content: "محتوى المقال حول تعلم لغة البرمجة Python."
+    }
+];
+
+const articlesSection = document.querySelector("#articles");
+
+articles.forEach(article => {
+    const articleElement = document.createElement("article");
+    articleElement.innerHTML = `<h3>${article.title}</h3><p>${article.content}</p>`;
+    articlesSection.appendChild(articleElement);
+});
+
+// إضافة فيديوهات عبر JavaScript
+const videos = [
+    {
+        title: "دورة JavaScript للمبتدئين",
+        url: "https://www.youtube.com/watch?v=example"
+    },
+    {
+        title: "مقدمة في HTML و CSS",
+        url: "https://www.youtube.com/watch?v=example"
+    }
+];
+
+const videosSection = document.querySelector("#videos");
+
+videos.forEach(video => {
+    const videoElement = document.createElement("div");
+    videoElement.innerHTML = `<h3>${video.title}</h3><iframe width="560" height="315" src="${video.url}" frameborder="0" allowfullscreen></iframe>`;
+    videosSection.appendChild(videoElement);
+});
 
 scrollTopBtn.onclick = function () {
     window.scrollTo({ top: 0, behavior: "smooth" });
